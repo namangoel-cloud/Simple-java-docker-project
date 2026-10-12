@@ -1,19 +1,22 @@
-# stable official Java runtime base image
-FROM openjdk:17-jdk-alpine
+## This is a docker file for the Java application
 
-# metadata
-LABEL maintainer="your-email@example.com"
-LABEL version="1.0"
-LABEL description="A simple Java application"
+#SOURCE IMAGE
 
-# working directory
+FROM alpine/java:22-jdk
+
+# CREATING THE WORKING DIRECTORY IN THE CONTAINER
+
 WORKDIR /app
 
-# Copy source code into the container
+# COPYing the each and every code in the /app of the containe from the host machine 
+
+#COPY . .
 COPY src/Main.java /app/Main.java
 
-# Compile the Java code
-RUN javac Main.java
+# Compiling the java program into the /app inside the containe 
 
-# Run the Java application when the container starts
+RUN javac /app/Main.java
+
+# Execute the java program inside the container
+
 CMD ["java", "Main"]
