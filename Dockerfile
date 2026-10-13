@@ -1,5 +1,6 @@
 ## This is a docker file for the Java application
-
+##
+# Date:  13/10/2026
 #SOURCE IMAGE
 
 FROM alpine/java:22-jdk
